@@ -1,10 +1,10 @@
 module org.example.projetotrabalhojava {
     requires javafx.controls;
+    requires javafx.graphics;
     requires javafx.fxml;
 
 
-    opens br.com.app.tarefas to javafx.fxml;
-    exports br.com.app.tarefas;
-    exports br.com.app.tarefas.controller;
-    opens br.com.app.tarefas.controller to javafx.fxml;
+    opens app.controller to javafx.graphics, java.fx.controls, javafx.fxml;
+    opens app.model;
+    exports app;
 }

@@ -1,6 +1,6 @@
-package br.com.app.tarefas.dao.tarefa;
+package app.dao.tarefa;
 
-import br.com.app.tarefas.model.Tarefa;
+import app.model.Tarefa;
 
 import java.util.List;
 

@@ -1,13 +1,15 @@
-package br.com.app.tarefas.model;
+package app.model;
+
+import java.time.LocalDate;
 
 public class Tarefa {
     private String titulo;
     private String descricao;
-    private int prazo;
+    private LocalDate prazo;
     private String prioridade;
-    private Double isConcluido;
+    private Boolean isConcluido;
 
-    public Tarefa(String titulo, String descricao, int prazo, String prioridade, Double isConcluido) {
+    public Tarefa(String titulo, String descricao, LocalDate prazo, String prioridade, Boolean isConcluido) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.prazo = prazo;
@@ -31,11 +33,11 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public int getPrazo() {
+    public LocalDate getPrazo() {
         return prazo;
     }
 
-    public void setPrazo(int prazo) {
+    public void setPrazo(LocalDate prazo) {
         this.prazo = prazo;
     }
 
@@ -47,11 +49,18 @@ public class Tarefa {
         this.prioridade = prioridade;
     }
 
-    public Double getIsConcluido() {
+    public Boolean getConcluido() {
         return isConcluido;
     }
 
-    public void setIsConcluido(Double isConcluido) {
-        this.isConcluido = isConcluido;
+    public String status() {
+        if (this.isConcluido) {
+            return "Concluído";
+        }
+        return "Não concluído";
+    }
+
+    public void setConcluido(Boolean concluido) {
+        isConcluido = concluido;
     }
 }

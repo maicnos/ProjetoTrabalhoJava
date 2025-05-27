@@ -1,6 +1,6 @@
-package br.com.app.tarefas.util;
+package app.util;
 
-import br.com.app.tarefas.dao.tarefa.TarefaDAOList;
+import app.dao.tarefa.TarefaDAOList;
 
 public class ConnectionFactory {
     private static TarefaDAOList tarefas;

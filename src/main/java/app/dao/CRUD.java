@@ -1,4 +1,4 @@
-package br.com.app.tarefas.dao;
+package app.dao;
 
 import java.util.List;
 
