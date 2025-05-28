@@ -48,6 +48,8 @@ public class Controller {
 
     private ObservableList<Tarefa> tarefasData;
 
+    //private Tarefa tarefaSelecionada;
+
     @FXML
     void butn_ad_adicionar(ActionEvent event) {
         try {
@@ -76,6 +78,25 @@ public class Controller {
     @FXML
     void butn_del_deletar(ActionEvent event) {
 
+        try {
+
+            Tarefa selecionada = tabelaTarefas.getSelectionModel().getSelectedItem();
+            idLabelError.setText("A tarefa "
+                    + selecionada.getTitulo()
+                    + " foi removida.");
+            int i = selecionada.getId();
+
+            DAO.getTarefa().delete(i);
+
+            tarefasData.remove(selecionada);
+
+            //DAO.getTarefa().read();
+
+        } catch (Exception e) {
+            System.out.println(e);
+            idLabelError.setText("Aconteceu algum erro.");
+        }
+
     }
 
     @FXML
@@ -85,6 +106,9 @@ public class Controller {
 
     @FXML
     public void initialize() {
+
+        //this.tarefasData.addAll(DAO.getTarefa().read());
+
         idPrioridade.getItems().addAll(
                 "Alta",
                 "Normal",

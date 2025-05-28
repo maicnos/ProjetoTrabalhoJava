@@ -44,10 +44,13 @@ public class TarefaDAOList implements TarefaDAO{
 
     @Override
     public void delete(int id) {
-        for (int i = 0; i < this.tarefas.size(); i++) {
-            if (this.tarefas.get(i).getId() == id) {
-                this.tarefas.remove(id);
-            }
-        }
+
+        this.tarefas.removeIf(tarefa -> tarefa.getId() == id);
+
+//        for (int i = 0; i < this.tarefas.size(); i++) {
+//            if (this.tarefas.get(i).getId() == id) {
+//                this.tarefas.remove(id);
+//            }
+//        }
     }
 }
