@@ -2,12 +2,18 @@ package app.dao.tarefa;
 
 import app.model.Tarefa;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TarefaDAOList implements TarefaDAO{
 
     private List<Tarefa> tarefas;
-    private int nextID = 0;
+    private int nextID;
+
+    public TarefaDAOList() {
+        this.tarefas = new ArrayList<>();
+        this.nextID = 0;
+    }
 
     @Override
     public Tarefa create(Tarefa tarefa) {
@@ -20,7 +26,11 @@ public class TarefaDAOList implements TarefaDAO{
 
     @Override
     public List<Tarefa> read() {
-        return List.of();
+        List<Tarefa> listaTarefas = new ArrayList<>();
+        for (Object i : this.tarefas) {
+            listaTarefas.add((Tarefa) i);
+        }
+        return listaTarefas;
     }
 
     @Override

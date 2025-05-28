@@ -3,12 +3,12 @@ package app.dao;
 import app.dao.tarefa.TarefaDAOList;
 
 public class DAO {
-    private static TarefaDAOList tarefas;
+    private static TarefaDAOList tarefa;
 
-    public static TarefaDAOList getTarefas() {
-        if (tarefas == null) {
-            tarefas = new TarefaDAOList();
+    public static TarefaDAOList getTarefa() {
+        if (tarefa == null) {
+            tarefa = new TarefaDAOList();
         }
-        return tarefas;
+        return tarefa;
     }
 }

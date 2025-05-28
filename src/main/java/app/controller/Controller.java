@@ -1,5 +1,6 @@
 package app.controller;
 
+import app.dao.DAO;
 import app.model.Tarefa;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
@@ -50,21 +51,25 @@ public class Controller {
     @FXML
     void butn_ad_adicionar(ActionEvent event) {
         try {
-            Tarefa nova_tarefa = new Tarefa(this.idTitulo.getText(),
+            Tarefa nova_tarefa = DAO.getTarefa().create(new Tarefa(this.idTitulo.getText(),
                     this.idDescricao.getText(), this.idPrazo.getValue(),
                     this.idPrioridade.getValue(),
-                    this.id_IsConcluido.isSelected());
+                    this.id_IsConcluido.isSelected()));
+
+
 
             this.tarefasData.add(nova_tarefa);
+            //this.tarefasData.addAll(DAO.getTarefa().read());
 
         } catch (Exception e) {
             this.idLabelError.setText("Um erro aconteceu!");
+            System.out.println(e);
         }
 
         this.idTitulo.clear();
         this.idDescricao.clear();
         this.idPrazo.setValue(null);
-        this.idPrioridade.setValue(null);
+        this.idPrioridade.setValue("Prioridade");
         this.id_IsConcluido.setSelected(false);
     }
 
@@ -83,10 +88,11 @@ public class Controller {
         idPrioridade.getItems().addAll(
                 "Alta",
                 "Normal",
-                "BAixa"
+                "Baixa"
         );
 
         this.tarefasData = FXCollections.observableArrayList();
+        //this.tarefasData.addAll(DAO.getTarefa().read());
 
         TableColumn columnTitulo = new TableColumn<>("Tarefa");
         TableColumn columnPrazo = new TableColumn<>("Prazo");
