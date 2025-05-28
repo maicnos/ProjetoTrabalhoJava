@@ -8,6 +8,7 @@ public class Tarefa {
     private LocalDate prazo;
     private String prioridade;
     private Boolean isConcluido;
+    private String status;
 
     public Tarefa(String titulo, String descricao, LocalDate prazo, String prioridade, Boolean isConcluido) {
         this.titulo = titulo;
@@ -53,7 +54,7 @@ public class Tarefa {
         return isConcluido;
     }
 
-    public String status() {
+    public String getStatus() {
         if (this.isConcluido) {
             return "Concluído";
         }

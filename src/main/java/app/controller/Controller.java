@@ -95,10 +95,10 @@ public class Controller {
         TableColumn columnStatus = new TableColumn("Status");
 
         columnTitulo.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("titulo"));
-        columnTitulo.setCellValueFactory(new PropertyValueFactory<Tarefa,LocalDate>("prazo"));
-        columnTitulo.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("prioridade"));
-        columnTitulo.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("descricao"));
-        columnTitulo.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("status"));
+        columnPrazo.setCellValueFactory(new PropertyValueFactory<Tarefa,LocalDate>("prazo"));
+        columnPrioridade.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("prioridade"));
+        columnDescricao.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("descricao"));
+        columnStatus.setCellValueFactory(new PropertyValueFactory<Tarefa,String>("status"));
 
         this.tabelaTarefas.getColumns().addAll(columnTitulo,columnPrazo,columnPrioridade,columnDescricao,columnStatus);
         this.tabelaTarefas.setItems(tarefasData);
