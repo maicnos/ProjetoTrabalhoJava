@@ -81,9 +81,9 @@ public class Controller {
     @FXML
     public void initialize() {
         idPrioridade.getItems().addAll(
-                "Baixa",
+                "Alta",
                 "Normal",
-                "Alta"
+                "BAixa"
         );
 
         this.tarefasData = FXCollections.observableArrayList();

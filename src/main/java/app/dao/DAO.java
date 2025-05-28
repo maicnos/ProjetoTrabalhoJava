@@ -1,8 +1,8 @@
-package app.util;
+package app.dao;
 
 import app.dao.tarefa.TarefaDAOList;
 
-public class ConnectionFactory {
+public class DAO {
     private static TarefaDAOList tarefas;
 
     public static TarefaDAOList getTarefas() {

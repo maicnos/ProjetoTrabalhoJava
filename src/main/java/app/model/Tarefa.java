@@ -3,6 +3,7 @@ package app.model;
 import java.time.LocalDate;
 
 public class Tarefa {
+    private int id;
     private String titulo;
     private String descricao;
     private LocalDate prazo;
@@ -63,5 +64,13 @@ public class Tarefa {
 
     public void setConcluido(Boolean concluido) {
         isConcluido = concluido;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

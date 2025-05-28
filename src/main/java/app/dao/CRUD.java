@@ -8,8 +8,8 @@ public interface CRUD <J>{
 
     public List<J> read();
 
-    public J update(J obj);
+    public void update(J obj);
 
-    public void delete(J obj);
+    public void delete(int id);
 
 }
