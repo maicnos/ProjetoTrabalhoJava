@@ -5,6 +5,6 @@ module org.example.projetotrabalhojava {
 
 
     opens app.controller to javafx.graphics, java.fx.controls, javafx.fxml;
-    opens app.model;
-    exports app;
+    opens app.model; // Abre o pacote app.model
+    exports app; // Exporta o pacote principal para que outras partes do projeto possam acessá-lo
 }
