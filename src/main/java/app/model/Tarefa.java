@@ -3,12 +3,13 @@ package app.model;
 import java.time.LocalDate;
 
 public class Tarefa {
-    private String titulo;
-    private String descricao;
-    private LocalDate prazo;
-    private String prioridade;
-    private Boolean isConcluido;
-    private String status;
+    private int id; // identificador da tarefa
+    private String titulo; // Título da tarefa
+    private String descricao; // Descrição da tarefa
+    private LocalDate prazo; // Prazo da tarefa
+    private String prioridade; // Prioridade da tarefa
+    private Boolean isConcluido; // Indica se a tarefa foi concluída
+    private String status; // Status em forma de texto da tarefa
 
     public Tarefa(String titulo, String descricao, LocalDate prazo, String prioridade, Boolean isConcluido) {
         this.titulo = titulo;
@@ -16,7 +17,7 @@ public class Tarefa {
         this.prazo = prazo;
         this.prioridade = prioridade;
         this.isConcluido = isConcluido;
-    }
+    } // Construtor para inicializar uma nova tarefa (sem ID)
 
     public String getTitulo() {
         return titulo;
@@ -59,9 +60,17 @@ public class Tarefa {
             return "Concluído";
         }
         return "Não concluído";
-    }
+    } // Retorna o status textual da tarefa com base no campo isConcluido
 
     public void setConcluido(Boolean concluido) {
         isConcluido = concluido;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
